@@ -1,6 +1,16 @@
 # CarND-Controls-PID
 Self-Driving Car Engineer Nanodegree Program
 
+## Reflection
+
+The first aproximation to the project was to use the basic PID controlling algorithm, without using Twiddle. After some logic bugs (like mixing Ki and Kd parameters, because the order is changes form initialization to the formula), I used a very good advice form the forums: initializing all parameters to 0 and start tuning them one by one.
+
+So using the exercise values, I started with 0.2 for Kp. this seemed ok so I got to Kd with 3.0, and finally 0.0004 for Ki(not 0.004 as in the exercise, because the car got too shaky). The only fine tuning here was to reduce Kp to 0.08 after some tests.
+
+Kd helped stabilizing the cars zigzag, but Ki-s influence is not so noticeable.
+
+Once I had the steering PID controller, I tried another one for the speed, this time using 0.2, 0.0004, 3.0 for the Kp, Ki, Kd values. Now the car drives really really fast (it gets scary while driving around some curves) but is able to reduce speed when the CTE increases, and step the gas pedal when it decreases.
+
 ---
 
 ## Dependencies

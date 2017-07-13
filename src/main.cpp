@@ -62,11 +62,9 @@ int main()
 		  pid.UpdateError(cte);
           steer_value = pid.TotalError();
 		  
+		  // Get throttle value and adjust it
 		  throttle_pid.UpdateError(cte);
 		  double throttle_value = throttle_pid.TotalError();
-		  
-		  std::cout << "Throttle Error: " << throttle_value << std::endl;
-
 		  throttle_value = fabs(0.1 / throttle_value);
 		  
           // DEBUG
