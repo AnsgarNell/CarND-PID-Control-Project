@@ -35,12 +35,3 @@ double PID::TotalError() {
 	return - Kp * cte - Kd * diff_cte - Ki * int_cte;
 }
 
-double PID::TotalError(double speed) {
-	double rate;
-	if(speed > 10)
-		rate = speed/100.0;
-	else
-		rate = 1.0;
-	return (- Kp * cte - Kd * diff_cte - Ki * int_cte) / rate;
-}
-
