@@ -28,11 +28,6 @@ public:
   double diff_cte;
   double prev_cte;
   double int_cte;
-  
-  /*
-  * Twiddle variables
-  */
-  vector<double> dp;
 
   /*
   * Constructor
