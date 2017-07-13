@@ -1,6 +1,10 @@
 #ifndef PID_H
 #define PID_H
 
+#include <vector>
+
+using namespace std;
+
 class PID {
 public:
   /*
@@ -16,6 +20,19 @@ public:
   double Kp;
   double Ki;
   double Kd;
+  
+  /*
+  * cte values
+  */
+  double cte;
+  double diff_cte;
+  double prev_cte;
+  double int_cte;
+  
+  /*
+  * Twiddle variables
+  */
+  vector<double> dp;
 
   /*
   * Constructor
@@ -41,6 +58,8 @@ public:
   * Calculate the total PID error.
   */
   double TotalError();
+  
+  double TotalError(double speed);
 };
 
 #endif /* PID_H */
